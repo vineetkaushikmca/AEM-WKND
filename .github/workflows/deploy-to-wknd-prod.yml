@@ -37,8 +37,8 @@ jobs:
 
       - name: Push changes to WKND Development
         run:
-          git push -u wknd main:${TARGET_BRANCH_DEV}
+          git push -u wknd main wknd ${TARGET_BRANCH_DEV}
 
       - name: Push changes to WKND Production
         run:
-          git push -u wknd main:${TARGET_BRANCH_PROD}
+          git push -u wknd main wknd ${TARGET_BRANCH_PROD}
