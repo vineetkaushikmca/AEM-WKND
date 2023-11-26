@@ -27,7 +27,7 @@ jobs:
 
       - name: Add WKND remote
         run:
-          git remote add wknd https://${USER_EMAIL}:${USER_PWD}@${TARGET_REPO}
+          git remote add wknd https://github.com/vineetkaushikmca/WKND.site.git
 
       - name: Set Git config
         run: |
