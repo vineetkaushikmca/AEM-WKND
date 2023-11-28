@@ -16,6 +16,33 @@ on:
   workflow_dispatch:
 
 jobs:
+ deploy:
+    name: Deploy to Stage
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 1
+      matrix:
+        node-version: ['16']
+        os: [ubuntu-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install
+        run: npm i
+      - name: Setup CLI
+        uses: adobe/aio-cli-setup-action@1.1.0
+        with:
+          os: ${{ matrix.os }}
+          version: 9.x.x
+      - name: Setup cm-pipeline-execution-action
+        uses: adobe/aio-cloudmanager-create-execution-action@v1.0.5
+        with:
+          os: ${{ matrix.os }}
+          version: 9.x.x
   build:
     runs-on: ubuntu-latest
 
