@@ -22,9 +22,3 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install
         run: npm i
-      - name: Setup CLI
-        uses: adobe/aio-cli-setup-action@1.1.0
-        with:
-          os: ${{ matrix.os }}
-          version: 9.x.x
-    
