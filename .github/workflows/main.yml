@@ -23,6 +23,8 @@ jobs:
         IMSORGID: 213C58BF5BC725F60A495C9C@AdobeOrg
         SCOPES: 'ent_cloudmgr_sdk'
         KEY: ${{ secrets.KEY_STAGE }}
+        PIPELINEID: 12150506
+        PROGRAMID: 89809
 
     - name: Print Hello World
       run: echo "Hello, World!"
