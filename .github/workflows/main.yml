@@ -1,4 +1,4 @@
-name: Hello World
+name: Hello World with Auth
 
 on:
   push:
@@ -12,6 +12,17 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Authenticate
+      uses: adobe/aio-apps-action@2.0.1
+      with:
+        command: auth
+        CLIENTID: ${{ secrets.CM_CLIENT_ID }}
+        CLIENTSECRET: ${{ secrets.CM_CLIENT_SECRET }}
+        TECHNICALACCOUNTID: ${{ secrets.CM_TA_EMAIL }}
+        IMSORGID: ${{ secrets.CM_ORG_ID }}
+        SCOPES: 'ent_cloudmgr_sdk'
+        KEY: ${{ secrets.CM_PRIVATE_KEY }}
 
     - name: Print Hello World
       run: echo "Hello, World!"
