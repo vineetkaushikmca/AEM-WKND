@@ -17,9 +17,9 @@ jobs:
       uses: adobe/aio-cloudmanager-create-execution-action@v1.0.5
       with:
         command: auth
-        CLIENTID: abba070b2452468c8ab2021093367300
-        CLIENTSECRET: p8e-3I2TdMDOz0f4nmTK9UxncXJhvNguaHKh
-        TECHNICALACCOUNTID: D0C03F986565DCB60A495C04@techacct.adobe.com
+        CLIENTID: d7b1dc0fe3124da39dd1c1db61522cac
+        CLIENTSECRET: p8e-aM_xKhjXeNk21y7ZT7U3oZVZuw9ua70X
+        TECHNICALACCOUNTID: 22C530316568AD3C0A495C50@techacct.adobe.com
         IMSORGID: 213C58BF5BC725F60A495C9C@AdobeOrg
         SCOPES: 'ent_cloudmgr_sdk'
         KEY: ${{ secrets.KEY_STAGE }}
