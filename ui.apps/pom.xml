@@ -48,10 +48,16 @@
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <configuration>
+                    <allowIndexDefinitions>true</allowIndexDefinitions>
+                    <properties>
+                        <cloudManagerTarget>none</cloudManagerTarget>
+                        <noIntermediateSaves>true</noIntermediateSaves>
+
+                    </properties>
                     <group>com.adobe.aem.guides</group>
                     <name>aem-guides-wknd.ui.apps</name>
-                    <packageType>application</packageType>
-                    <accessControlHandling>merge</accessControlHandling>
+                   <!-- <packageType>application</packageType> -->
+                    <accessControlHandling>ignore</accessControlHandling>
                     <repositoryStructurePackages>
                         <repositoryStructurePackage>
                             <groupId>com.adobe.aem.guides</groupId>
@@ -139,6 +145,11 @@
             <artifactId>org.apache.sling.scripting.sightly.runtime</artifactId>
             <version>1.2.0-1.4.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jackrabbit.vault</groupId>
+            <artifactId>vault-validation</artifactId>
+            <version>3.5.6</version>
         </dependency>
     </dependencies>
 </project>
